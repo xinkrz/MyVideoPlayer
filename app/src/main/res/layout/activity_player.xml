@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000">
 
+    <!-- 视频播放区域 -->
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:keepScreenOn="true" />
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:id="@+id/titleBar"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="#80000000">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_media_previous"
+            android:contentDescription="返回" />
+
+        <TextView
+            android:id="@+id/videoTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            android:text="视频标题"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:paddingStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- 全屏切换按钮 -->
+    <ImageButton
+        android:id="@+id/btnFullscreen"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:padding="8dp"
+        android:src="@drawable/ic_fullscreen"
+        android:contentDescription="切换全屏" />
+
 </FrameLayout>
